@@ -1,9 +1,11 @@
 ﻿using System;
+using System;
 namespace LibaryProject
 {
-    public class Reader
+    public class Autor
     {
         public string Name { get; set; }
         public int ID;
+
     }
 }
