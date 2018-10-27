@@ -3,13 +3,14 @@ using System.Collections.Generic;
 
 namespace LibaryProject.Data
 {
-    public class Books
+    public class Books : Dictionary<int, Book>
     {
-        private Dictionary<int, Book> BooksList = new Dictionary <int, Book>();
+             Dictionary<int, Book> BooksList;
 
-        public void Set(int ID, Book book)
-        {
-            if (BooksList.ContainsKey(ID))
+       
+            public void set(int ID, Book book)
+            {
+                if (BooksList.ContainsKey(ID))
                 {
                     BooksList[ID] = book;
                 }
@@ -19,17 +20,18 @@ namespace LibaryProject.Data
                 }
             }
 
-            public int Get(int ID)
+            public int get(int ID)
             {
                 int result = 0;
 
                 if (BooksList.ContainsKey(ID))
                 {
-                result = BooksList[ID];
+                    result = BooksList[ID];
                 }
 
                 return result;
             }
 
+
+        }
     }
-}
