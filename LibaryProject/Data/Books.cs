@@ -5,33 +5,43 @@ namespace LibaryProject.Data
 {
     public class Books : Dictionary<int, Book>
     {
-             Dictionary<int, Book> BooksList;
+        Dictionary<int, Book> BooksList;
 
-       
-            public void set(int ID, Book book)
+
+        public void Set(int ID, Book book)
+        {
+            if (BooksList.ContainsKey(ID))
+            {
+                BooksList[ID] = book;
+            }
+            else
+            {
+                BooksList.Add(ID, book);
+            }
+        }
+
+        public Book Get(int ID)
+        {
+            try
             {
                 if (BooksList.ContainsKey(ID))
                 {
-                    BooksList[ID] = book;
+                    return BooksList[ID];
                 }
                 else
                 {
-                    BooksList.Add(ID, book);
+                    //throw new Exception("No book with such ID");
+                    throw new ArgumentOutOfRangeException();
                 }
             }
-
-            public int get(int ID)
+            catch (Exception e)
             {
-                int result = 0;
-
-                if (BooksList.ContainsKey(ID))
-                {
-                    result = BooksList[ID];
-                }
-
-                return result;
+                Console.Write(e.Message);
+                return null;
             }
-
 
         }
+
+
     }
+}

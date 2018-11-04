@@ -1,22 +1,12 @@
 ﻿using System;
-namespace LibaryProject
+namespace LibaryProject.Data
 {
     public class Book
     {
-        public string Title { get; set; }
-        public string Autor { get; set; }
-        public bool AvailableStatus
-        {
-            get
-            {
-                return AvailableStatus;
-            }
-            set => AvailableStatus = true;
-        }
-
-        public static implicit operator int(Book v)
-        {
-            throw new NotImplementedException();
-        }
+        public string title { get; set; }
+        public string autor { get; set; }
+        public int bookID { get; set; }
+        public Boolean isAvailable { get; set; }
+        public int readerID { get; set;  }
     }
 }
