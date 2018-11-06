@@ -30,7 +30,7 @@ namespace LibaryProject
                 if (b[BookID].isAvailable == false && b[BookID].readerID == ReaderID)
                 {
                     b[BookID].isAvailable = true;
-
+                    b[BookID].readerID = 0;
                 }
                 else
                 {
