@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace LibraryProoject
+namespace LibraryProojectTest
 {
     [TestClass]
     public class UnitTest1

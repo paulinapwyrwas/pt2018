@@ -1,4 +1,5 @@
 ﻿using System;
+using LibaryProject.Data;
 
 namespace LibaryProject
 {
@@ -6,7 +7,7 @@ namespace LibaryProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            History h = new History();
         }
     }
 }
