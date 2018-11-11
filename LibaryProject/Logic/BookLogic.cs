@@ -8,13 +8,15 @@ namespace LibaryProject
     {
         static void Borrowing(Books b, int BookID, int ReaderID)
         {
+
             if (b.ContainsKey(BookID))
             {
                 if (b[BookID].isAvailable == true)
                 {
                     b[BookID].isAvailable = false;
                     b[BookID].readerID = ReaderID;
-                    
+                    History history = new History();
+                    history.AddEvent(b[BookID]);
                 }
                 else
                 {

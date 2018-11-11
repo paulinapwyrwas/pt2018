@@ -1,11 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibraryProject;
-using Xunit;
+using System.Collections.Generic;
+using LibaryProject.Data;
+using LibaryProject;
+using static LibaryProject.BookLogic;
 
 namespace LibraryProject
 {
-    [TestClass]
+    /*[TestClass]
     public class UnitTest1
     {
         
@@ -37,5 +39,28 @@ namespace LibraryProject
             Assert.IsTrue(BookLogic.Borrowing(a, a.BookID, a.ReaderID));
             Assert.IsTrue(BookLogic.Borrowing(b, b.BookID, b.ReaderID));
         }
+    }*/
+
+        [TestClass]
+        public class BorrowTest
+        {
+            private Dictionary<int, Book> books;
+            private List<Reader> readers;
+
+            //BookLogic logic;
+            Book book;
+            Reader reader;
+            
+
+            public BorrowTest()
+            {
+                books = new Dictionary<int, Book>();
+                readers = new List<Reader>();
+                book = new Book(125432, "Harry Potter", "J.K. Rowling", false, 10);
+                reader = new Reader("John Smith", 10);
+                BookLogic.Borrowing(books, book.bookID, reader.ID);
+            }
+
+        }
     }
-}
+
