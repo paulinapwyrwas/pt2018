@@ -6,26 +6,24 @@ namespace LibaryProject
 {
     public static class BookLogic
     {
-        static void Borrowing(Books b, int BookID, int ReaderID)
+        public static void Borrowing(Books b, int BookID, int ReaderID)
         {
-
-            if (b.ContainsKey(BookID))
+            Book book = b.GetBook(BookID);
+            if (book.isAvailable == true)
             {
-                if (b[BookID].isAvailable == true)
-                {
-                    b[BookID].isAvailable = false;
-                    b[BookID].readerID = ReaderID;
-                    History history = new History();
-                    history.AddEvent(b[BookID]);
-                }
-                else
-                {
-                    Console.WriteLine("The book is already borrowed.");
-                }
+                book.isAvailable = false;
+                book.readerID = ReaderID;
+                History history = new History();
+                history.AddEvent(book);
+            }
+            else
+            {
+                Console.WriteLine("The book is already borrowed.");
             }
 
+
         }
-        static void Returning(Books b, int BookID, int ReaderID)
+        public static void Returning(Books b, int BookID, int ReaderID)
         {
             if (b.ContainsKey(BookID))
             {

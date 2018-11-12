@@ -7,20 +7,24 @@ namespace LibaryProject.Data
     {
         Dictionary<int, Book> BooksList;
 
-
-        public void Set(int ID, Book book)
+        public Books()
         {
-            if (BooksList.ContainsKey(ID))
+            BooksList = new Dictionary<int, Book>();
+        }
+
+        public void AddBook(Book book)
+        {
+            if (BooksList.ContainsKey(book.bookID))
             {
-                BooksList[ID] = book;
+                BooksList[book.bookID] = book;
             }
             else
             {
-                BooksList.Add(ID, book);
+                BooksList.Add(book.bookID, book);
             }
         }
 
-        public Book Get(int ID)
+        public Book GetBook(int ID)
         {
             try
             {
@@ -41,7 +45,6 @@ namespace LibaryProject.Data
             }
 
         }
-
 
     }
 }

@@ -44,23 +44,47 @@ namespace LibraryProject
         [TestClass]
         public class BorrowTest
         {
-            private Dictionary<int, Book> books;
-            private List<Reader> readers;
+        private Books books;
+        private Readers readers;
 
             //BookLogic logic;
-            Book book;
-            Reader reader;
-            
+            private Book book;
+            private Reader reader;
 
-            public BorrowTest()
+       
+        public BorrowTest()
             {
-                books = new Dictionary<int, Book>();
-                readers = new List<Reader>();
-                book = new Book(125432, "Harry Potter", "J.K. Rowling", false, 10);
+                // uroczyscie obiecuje ze knuje cos niedobrego
+                books = new Books();
+                readers = new Readers();
+
+
+                // koniec psot
+
+
+                book = new Book(125432, "Harry Potter", "J.K. Rowling"); // <3 
                 reader = new Reader("John Smith", 10);
-                BookLogic.Borrowing(books, book.bookID, reader.ID);
+                books.AddBook(book);
+                readers.AddReader(reader);
             }
 
-        }
+            [TestMethod]
+
+            public void RentAvailableBook()
+            {
+                Borrowing(books, book.bookID, reader.ID);
+                Assert.IsFalse(book.isAvailable);
+            }
+
+            [TestMethod]
+
+            public void ReturnBook()
+            {
+              //  Borrowing(books, book.bookID, reader.ID);
+                Returning(books, book.bookID, reader.ID);
+                Assert.IsTrue(book.isAvailable);
+            }
+
+    }
     }
 

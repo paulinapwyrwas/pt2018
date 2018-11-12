@@ -12,12 +12,12 @@ namespace LibaryProject
             _readersList = new List<Reader>();
         }
 
-        public Reader getReader (int index)
+        public Reader GetReader (int index)
         {
             return _readersList[index];
         }
 
-        public void addReader(Reader newReader)
+        public void AddReader(Reader newReader)
         {
             _readersList.Add(newReader);
         }

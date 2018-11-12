@@ -10,20 +10,13 @@ namespace LibaryProject.Data
         public Boolean isAvailable { get; set; }
         public int readerID { get; set;  }
 
-        public Book(int bookID, string title, string autor, Boolean isAvailable, int readerID)
+        public Book(int bookID, string title, string autor)
         {
             this.bookID = bookID;
             this.title = title;
             this.autor = autor;
-            this.isAvailable = isAvailable;
-            if (this.isAvailable == true)
-            {
-                this.readerID = 0;
-            }
-            else
-            {
-                this.readerID = readerID;
-            }
+            this.isAvailable = true;
+            this.readerID = 0;
         }
     }
 }
