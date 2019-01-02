@@ -9,6 +9,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "WpfApp1\Presentation.csproj", "{6898D9A1-76C5-491C-A533-9ADFE29E24DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "ConsoleApp1\Services.csproj", "{6B082A90-D756-4E74-8F21-654F4C0F388A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8B195FB1-FD1C-47E7-80C2-9FC9B2A2C93D} = {8B195FB1-FD1C-47E7-80C2-9FC9B2A2C93D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
