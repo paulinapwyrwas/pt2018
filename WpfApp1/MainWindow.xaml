@@ -5,6 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+        Title="Library" Height="450" Width="800">
+    <Grid>
+        <StackPanel Name="Books">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Book: "/>
+                <TextBlock Margin="5,0,0,0" 
+                           Text="{Binding bookID}">
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Author: "/>
+                <TextBlock Margin="5,0,0,0" 
+                           Text="{Binding autor}">
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Availability: "/>
+                <TextBlock Margin="5,0,0,0" 
+                           Text="{Binding isAvalable}">
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
 </Window>

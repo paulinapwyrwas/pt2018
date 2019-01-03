@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LibaryProject.Data;
+
 
 namespace ConsoleApp1
 {
     class DatabaseAction
     {
-        private Data.Database database;
+        private Database database;
         public DatabaseAction()
         {
             database = new Database();
@@ -68,7 +68,7 @@ namespace ConsoleApp1
             var BooksFromDb = new List<Book>();
             if (database.Books.Any())
             {
-                var query = from bookn in database.Books
+                var query = from book in database.Books
                             select book;
                 foreach (var book in query)
                 {
