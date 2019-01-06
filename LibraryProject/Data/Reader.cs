@@ -1,5 +1,5 @@
 ﻿using System;
-namespace LibaryProject
+namespace LibraryProject
 {
     public class Reader
     {

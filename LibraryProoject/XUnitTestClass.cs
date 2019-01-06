@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using LibaryProject.Data;
-using LibaryProject;
-using static LibaryProject.BookLogic;
+using LibraryProject.Data;
+using LibraryProject;
+using static LibraryProject.BookLogic;
 
-namespace LibaryProject
+namespace LibraryProject
 {
     /*[TestClass]
     public class UnitTest1

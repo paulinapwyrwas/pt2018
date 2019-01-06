@@ -7,13 +7,13 @@ using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Data.Entity;
 
-namespace LibaryProject.Data
+namespace LibraryProject.Data
 {
 
     public class Database : DbContext
     {
         public DbSet<Book> Books { get; set; }
-        public DbSet<Event> eventHistory { get; set; }
+        public DbSet<History> History { get; set; }
         public DbSet<Reader> Readers { get; set; }
 
     }

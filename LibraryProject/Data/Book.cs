@@ -1,5 +1,5 @@
 ﻿using System;
-namespace LibaryProject.Data
+namespace LibraryProject.Data
 {
     public class Book
     {

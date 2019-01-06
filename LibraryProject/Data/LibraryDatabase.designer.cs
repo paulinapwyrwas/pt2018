@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibaryProject.Data
+namespace LibraryProject.Data
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LibraryProject.Data;
 
 
-namespace ConsoleApp1
+namespace LibraryProject
 {
     class DatabaseAction
     {
@@ -40,7 +41,7 @@ namespace ConsoleApp1
 
             if (obj is Book)
             {
-                databasb.Addresses.Add(Book)(object)obj);
+                database.Addresses.Add(Book)(object)obj);
             }
             else if (obj is Event)
             {

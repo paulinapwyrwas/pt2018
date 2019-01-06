@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LibaryProject.Data
+namespace LibraryProject.Data
 {
     public class Books : Dictionary<int, Book>
     {
