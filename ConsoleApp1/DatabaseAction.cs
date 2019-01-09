@@ -26,9 +26,9 @@ namespace LibraryProject
                 }
             }
 
-            else if (!database.History.Any() && data is List<Event>)
+            else if (!database.History.Any() && data is List<Reader>)
             {
-                foreach (var reader in data.Cast<Event>().ToList())
+                foreach (var reader in data.Cast<Reader>().ToList())
                 {
                     database.Readers.Add(reader);
                 }
@@ -36,12 +36,12 @@ namespace LibraryProject
             database.SaveChanges();
         }
 
-        public void insertSingleObject<T>(T obj)
+        /*public void insertSingleObject<T>(T obj)
         {
 
             if (obj is Book)
             {
-                database.Addresses.Add(Book)(object)obj);
+                database.Books.Add(Book)(object)obj);
             }
             else if (obj is Event)
             {
@@ -54,18 +54,18 @@ namespace LibraryProject
         {
             if (obj is Book)
             {
-                database.Addresses.Remove((Book)(object)obj);
+                database.Books.Remove((Book)(object)obj);
             }
             else if (obj is Event)
             {
                 database.Books.Remove((Event)(object)obj);
             }
             database.SaveChanges();
-        }
+        }*/
 
         public List<Book> readBooks()
         {
-            var database = new LibraryDatabase();
+            var database = new Database();
             var BooksFromDb = new List<Book>();
             if (database.Books.Any())
             {

@@ -8,6 +8,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryProjectTest", "Libra
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "WpfApp1\Presentation.csproj", "{6898D9A1-76C5-491C-A533-9ADFE29E24DD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6B082A90-D756-4E74-8F21-654F4C0F388A} = {6B082A90-D756-4E74-8F21-654F4C0F388A}
+		{6075ED99-E6B7-4B39-A1A4-256B9B62F69D} = {6075ED99-E6B7-4B39-A1A4-256B9B62F69D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "ConsoleApp1\Services.csproj", "{6B082A90-D756-4E74-8F21-654F4C0F388A}"
 EndProject

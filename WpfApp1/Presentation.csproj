@@ -104,5 +104,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConsoleApp1\Services.csproj">
+      <Project>{6b082a90-d756-4e74-8f21-654f4c0f388a}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibraryProject\LibraryProject.csproj">
+      <Project>{6075ed99-e6b7-4b39-a1a4-256b9b62f69d}</Project>
+      <Name>LibraryProject</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

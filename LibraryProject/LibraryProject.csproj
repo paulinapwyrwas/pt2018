@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6075ED99-E6B7-4B39-A1A4-256B9B62F69D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>LibraryProject</RootNamespace>
     <AssemblyName>LibraryProject</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -32,15 +32,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Data\LibraryDatabase.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>LibraryDatabase.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Data\LibraryDatabase.dbml.layout">
-      <DependentUpon>LibraryDatabase.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -59,9 +59,15 @@
   <ItemGroup>
     <Compile Include="Data\Book.cs" />
     <Compile Include="Data\Books.cs" />
+    <Compile Include="Data\Data.cs" />
     <Compile Include="Data\Database.cs" />
     <Compile Include="Data\Event.cs" />
     <Compile Include="Data\History.cs" />
+    <Compile Include="Data\LibraryDatabase.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryDatabase.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Reader.cs" />
     <Compile Include="Data\Readers.cs" />
     <Compile Include="Logic\BookLogic.cs" />

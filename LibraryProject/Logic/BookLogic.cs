@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using LibaryProject.Data;
+using LibraryProject.Data;
 
-namespace LibaryProject
+namespace LibraryProject
 {
     public static class BookLogic
     {
