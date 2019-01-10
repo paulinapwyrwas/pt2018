@@ -21,19 +21,76 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Book book = null;
+       // private Book book = null;
+        private Data data;
+        private int bookID;
+
         public MainWindow()
         {
             InitializeComponent();
+            data = new Data();
+            bookID = 1;
             InitBinding();
         }
 
         private void InitBinding()
         {
-            book = new Book(1674, "harry Potter", "J. K. Rowling");
-            Books.DataContext = book;
+            //book = new Book(1674, "Harry Potter", "J. K. Rowling");
+            data = new Data();
+
+            Books.DataContext = data.books.GetBook(bookID);
+        }
+        
+        private void NextBtnHandler(object sender, RoutedEventArgs e)
+        {
+            if (bookID >= 3)
+                bookID = 1;
+            else
+                bookID++;
+
+            Books.DataContext = data.books.GetBook(bookID);
         }
 
+        private void PrevBtnHandler(object sender, RoutedEventArgs e)
+        {
+            if (bookID <= 1)
+                bookID = 3;
+            else
+                bookID--;
+
+            Books.DataContext = data.books.GetBook(bookID);
+        }
+
+        private void RentBtnHandler(object sender, RoutedEventArgs e)
+        {
+            if (data.books.GetBook(bookID).isAvailable == true)
+            {
+                data.books.GetBook(bookID).isAvailable = false;
+                Books.DataContext = data.books.GetBook(bookID);
+            }
+            else
+            {
+                data.books.GetBook(bookID).isAvailable = true;
+                SubWindow subWindow = new SubWindow();
+                subWindow.Show();
+                Books.DataContext = data.books.GetBook(bookID);
+            }
+        }
+        private void ReturnBtnHandler(object sender, RoutedEventArgs e)
+        {
+            if (data.books.GetBook(bookID).isAvailable == false)
+            {
+                data.books.GetBook(bookID).isAvailable = true;
+                Books.DataContext = data.books.GetBook(bookID);
+            }
+            else
+            {
+                data.books.GetBook(bookID).isAvailable = false;
+                SubWindow2 subWindow = new SubWindow2();
+                subWindow.Show();
+                Books.DataContext = data.books.GetBook(bookID);
+            }
+        }
     }
 }
 

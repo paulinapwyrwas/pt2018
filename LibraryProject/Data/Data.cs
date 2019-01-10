@@ -7,22 +7,30 @@ using System.Threading.Tasks;
 
 namespace LibraryProject.Data
 {
-    class Data
+    public class Data
     {
-        private List<Book> books;
-        private List<Reader> readers;
-        private List<Book> availableBooks;
-        private List<Book> rentedBooks;
+        //private List<Book> books;
+        //private List<Reader> readers;
+        //private List<Book> availableBooks;
+        //private List<Book> rentedBooks;
+
+        public Books books;
 
         public Data()
         {
-            books = new List<Book>();
-            readers = new List<Reader>();
-            availableBooks = new List<Book>();
-            rentedBooks = new List<Book>();
+            books = new Books();
+            var book1 = new Book(1, "HP & Goblet of fire", "J.K Rowling");
+            var book2 = new Book(2, "HP & Philosopher stone", "J.K Rowling");
+            var book3 = new Book(3, "Hobbit", "J.R.R Tolkien");
+
+            books.AddBook(book1);
+            books.AddBook(book2);
+            books.AddBook(book3);
         }
 
-        public Boolean readBooks()
+
+
+        /*public Boolean readBooks()
         {
             var db = new DataContext();
             var booksFromDb = db.readBooks();
@@ -160,7 +168,7 @@ namespace LibraryProject.Data
             authors.Add(author);
             db.insertSingleObject(author);
             return true;
-        }
+        }*/
 
 
     }

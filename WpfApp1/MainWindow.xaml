@@ -8,23 +8,31 @@
         Title="Library" Height="450" Width="800">
     <Grid>
         <StackPanel Name="Books">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Book: "/>
-                <TextBlock Margin="5,0,0,0" 
+            <StackPanel Orientation="Vertical">
+                <TextBlock Margin="5,10,0,0" Text="Book id: "/>
+                <TextBlock Margin="5,10,0,0" 
                            Text="{Binding bookID}">
                 </TextBlock>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Author: "/>
-                <TextBlock Margin="5,0,0,0" 
+                <TextBlock Margin="5,10,0,0" Text="Book title: "/>
+                <TextBlock Margin="5,10,0,0" 
+                           Text="{Binding title}">
+                </TextBlock>
+                <TextBlock Margin="5,10,0,0" Text="Author: "/>
+                <TextBlock Margin="5,10,0,0" 
                            Text="{Binding autor}">
                 </TextBlock>
+                <TextBlock Margin="5,10,0,0" Text="Availability: "/>
+                <TextBlock Margin="5,10,0,0" 
+                           Text="{Binding isAvailable}">
+                </TextBlock>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Availability: "/>
-                <TextBlock Margin="5,0,0,0" 
-                           Text="{Binding isAvalable}">
-                </TextBlock>
+                <Button Click="NextBtnHandler" Margin="200,5,5,5" Width="170">Next</Button>
+                <Button Click="PrevBtnHandler" Margin="0,5,5,5" Width="170">Previus</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Click="RentBtnHandler" Margin="200,5,5,0" Width="170">Rent</Button>
+                <Button Click="ReturnBtnHandler" Margin="0,5,5,0" Width="170">Return</Button>
             </StackPanel>
         </StackPanel>
     </Grid>
