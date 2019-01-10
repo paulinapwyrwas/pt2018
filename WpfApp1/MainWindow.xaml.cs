@@ -43,7 +43,7 @@ namespace WpfApp1
         
         private void NextBtnHandler(object sender, RoutedEventArgs e)
         {
-            if (bookID >= 3)
+            if (bookID >= 4)
                 bookID = 1;
             else
                 bookID++;
@@ -54,7 +54,7 @@ namespace WpfApp1
         private void PrevBtnHandler(object sender, RoutedEventArgs e)
         {
             if (bookID <= 1)
-                bookID = 3;
+                bookID = 4;
             else
                 bookID--;
 
