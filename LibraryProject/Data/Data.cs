@@ -22,10 +22,12 @@ namespace LibraryProject.Data
             var book1 = new Book(1, "HP & Goblet of fire", "J.K Rowling");
             var book2 = new Book(2, "HP & Philosopher stone", "J.K Rowling");
             var book3 = new Book(3, "Hobbit", "J.R.R Tolkien");
+            var book4 = new Book(4, "The Notebook", "Nicholas Sparks");
 
             books.AddBook(book1);
             books.AddBook(book2);
             books.AddBook(book3);
+            books.AddBook(book4);
         }
 
 
